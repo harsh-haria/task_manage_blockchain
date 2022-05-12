@@ -1,5 +1,5 @@
-const ManSys = artifacts.require("ManSys");
+const Migrations = artifacts.require("Migrations");
 
 module.exports = function(deployer) {
-  deployer.deploy(ManSys);
+  deployer.deploy(Migrations);
 };
