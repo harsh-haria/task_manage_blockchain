@@ -9,12 +9,12 @@ steps to run the project:
 5) add whatever you want in the above file and then compile it using command 'truffle compile'. This creates additional files in build folder if you want to check them out
 6) Now we need to migrate the contract onto the blockchain. To do this we need to create a file under the folder 'migrations'. In this folder migrations are done according to the file number so be careful about that.
 7) Name the file '2_deploy_contracts.js' and write the code. save it.
-8) now in command line type 'truffle migrate'. This will push the contract onto the blockchain and now it is permanent.
-9) To check whether you have deployed successfully, use the console of truffle which you can enable by typing 'truffle console' in terminal. example shown below <br>
+8) Now in command line type 'truffle migrate'. This will push the contract onto the blockchain and now it is permanent. Make sure you have ganache running before you try this step or else it wont work.
+9) To check whether you have deployed successfully, use the console of truffle which you can enable by typing 'truffle console' in terminal. example shown below <br><br>
     todolist = await TodoList.deployed()
-    todolist.address
+    todolist.address<br><br>
 10) if you get some address in Hex that means you have followed all the steps correctly.
-11) you can also access other information like number of tasks etc. example shown below<br>
+11) you can also access other information like number of tasks etc. example shown below<br><br>
     task = await todoList.taskCount()
-    task.toNumber()
+    task.toNumber()<br><br>
 12) 
