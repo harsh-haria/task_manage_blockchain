@@ -1,5 +1,5 @@
 ﻿# task_manage_blockchain
-Blockchain Application using Ethereum Smart Contracts and Solidity
+Blockchain Application using Ethereum Smart Contracts and Solidity to manage tasks given to members of a team.
 
 steps to run the project:
 1) create a new folder named <project_folder_name>
