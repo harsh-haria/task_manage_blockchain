@@ -1,4 +1,5 @@
 ﻿# task_manage_blockchain
+**Work in Progress**
 Blockchain Application using Ethereum Smart Contracts and Solidity to manage tasks given to members of a team.
 
 steps to run the project:
