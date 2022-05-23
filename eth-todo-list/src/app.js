@@ -28,9 +28,11 @@ App = {
             console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
         }
       },
+
       loadAccount: async() => {
-        var accounts = web3.eth.getAccounts()
-        console.log(accounts[0])
+        App.account = await ethereum.request({ method: 'eth_accounts' });
+        console.log(App.account);
+        console.log('test print');
       }
 }
 
