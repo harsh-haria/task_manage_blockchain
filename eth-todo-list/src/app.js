@@ -1,9 +1,12 @@
 // import Web3 from 'web3'
 App = {
+    contract: {},
+
     load: async() => {
         // console.log('app loading...');
         await App.loadWeb3()
         await App.loadAccount()
+        await App.loadContract()
     },
     loadWeb3: async () => {
         if (window.ethereum) {
@@ -31,9 +34,23 @@ App = {
 
       loadAccount: async() => {
         App.account = await ethereum.request({ method: 'eth_accounts' });
-        console.log(App.account);
-        console.log('test print');
-      }
+        // console.log(App.account);
+        // console.log('test print');
+      },
+
+      loadContract: async () => {
+        // create a JS version of the contracts
+        // var contract = required("truffle-contract");
+
+        const todoList = await $.getJSON('TodoList.json')
+        App.contracts.TodoList = TruffleContract(todoList)
+        App.contracts.TodoList.setProvider(App.web3Provider)
+        // console.log(todoList);
+
+        // Hydrate the smart contract with values from the blockchain
+        App.todoList = await App.contracts.TodoList.deployed()
+    },
+
 }
 
 $(() => {

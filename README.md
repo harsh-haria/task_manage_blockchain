@@ -2,7 +2,7 @@
 **Work in Progress**<br>
 Blockchain Application using Ethereum Smart Contracts and Solidity to manage tasks given to members of a team.
 
-steps to run the project:
+<!-- steps to run the project:
 1) create a new folder named <project_folder_name>
 2) run 'truffle init'
 3) create 'package.json' file and install dependencies using 'npm install'
@@ -21,4 +21,4 @@ steps to run the project:
 12) if you have created a constructor in the file 'TodoList.sol', We will also see some tasks inside the blocks.
 13) you can access them by using command 'task = await todolist.task(<id>)' in truffle console.
 this will return some data. If you want some specific field in struct task then you can use command 
-'task.content'. this example returns the content of the specific task of that particular id. 
+'task.content'. this example returns the content of the specific task of that particular id.  -->

@@ -23,6 +23,7 @@
         "truffle-contract": "3.0.6"
     },
     "dependencies": {
+        "@truffle/contract": "^4.5.11",
         "web3": "^1.7.3"
     }
 }
