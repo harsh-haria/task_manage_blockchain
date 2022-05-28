@@ -7,7 +7,7 @@ App = {
         await App.loadWeb3();
         await App.loadAccounts();
         await App.loadContract();
-        // await App.render();
+        await App.render();
     },
    
       // https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8
@@ -57,71 +57,83 @@ App = {
         App.todoList = await App.contracts.TodoList.deployed()
     },
 
-    // render: async () => {
-    //     if (App.loading) {
-    //         return;
-    //     }
+    render: async () => {
+        //prevent double render
+        if (App.loading) {
+            return;
+        }
 
-    //     // Update app loading state
-    //     App.setLoading(true)
+        // // Update app loading state
+        App.setLoading(true)
 
-    //     // Render Account
-    //     $('#account').html(App.account)
+        // Render Account
+        $('#account').html(App.account)
 
-    //     // Render Tasks
-    //     await App.renderTasks()
+        // Render Tasks
+        await App.renderTasks()
 
-    //     // Update loading state
-    //     App.setLoading(false)
-    //     },
+        // // Update loading state
+        App.setLoading(false)
+        },
 
 
-    // renderTasks: async () => {
+    renderTasks: async () => {
+        //here we have 3 jobs
+        //0) Load all the tasks from the blockchain
+        //1) render tasks from our Application blockchain
+        //2) Show all the tasks accordingly
+
     //     // load all the tasks from the blockchain
-    //     const taskCount = await App.todoList.taskCount();
-    //     const $tackTemplate = $(".taskTemplate");
+        const taskCount = await App.todoList.taskCount();
+        const $tackTemplate = $(".taskTemplate");
 
     //     // render each of the tasks
-    //     for (var i = 1; i <= taskCount; i++){
-    //         const task = await App.todoList.tasks(i);
-    //         const task_id = task[0].toNumber();
-    //         const task_content = task[1];
-    //         const task_completed = task[2];
+        for (var i = 1; i <= taskCount; i++){
+            const task = await App.todoList.tasks(i);
+            const task_id = task[0].toNumber();
+            const task_content = task[1];
+            const task_completed = task[2];
+            // const task_assignee = task[3];
+            // const task_assigned_to = task[4];
+            // const task_timestamp = task[5];
+            // const task_deadline = task[6];
+            // const task_timeRemaining = task[7];
+
 
     //         // Create the html for the task
-    //         const $newTaskTemplate = $tackTemplate.clone()
-    //         $newTaskTemplate.find('.content').html(task_content)
-    //         $newTaskTemplate.find('input')
-    //                         .prop('name', task_id)
-    //                         .prop('checked', task_completed)
-    //                         .on('click', App.toggleCompleted)
+            const $newTaskTemplate = $tackTemplate.clone()
+            $newTaskTemplate.find('.content').html(task_content)
+            $newTaskTemplate.find('input')
+                            .prop('name', task_id)
+                            .prop('checked', task_completed)
+                            // .on('click', App.toggleCompleted)
     
     //         // Put the task in the correct list
-    //         if (task_completed) {
-    //             $('#completedTaskList').append($newTaskTemplate)
-    //         } else {
-    //             $('#taskList').append($newTaskTemplate)
-    //         }
+            if (task_completed) {
+                $('#completedTaskList').append($newTaskTemplate)
+            } else {
+                $('#taskList').append($newTaskTemplate)
+            }
     
     //         // Show the task
-    //         $newTaskTemplate.show()
-    //     }
+            $newTaskTemplate.show()
+        }
 
-    // },
+    },
 
 
-    // setLoading: (boolean) => {
-    //     App.loading = boolean;
-    //     const loader = $('#loader');
-    //     const content = $('#content');
-    //     if (boolean) {
-    //         loader.show();
-    //         content.hide();
-    //     } else {
-    //         loader.hide();
-    //         content.show();
-    //     }
-    // },
+    setLoading: (boolean) => {
+        App.loading = boolean;
+        const loader = $('#loader');
+        const content = $('#content');
+        if (boolean) {
+            loader.show();
+            content.hide();
+        } else {
+            loader.hide();
+            content.show();
+        }
+    },
 
 
     // createTask: async () => {
