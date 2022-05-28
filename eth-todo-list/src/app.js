@@ -46,7 +46,7 @@ App = {
         console.log(App.account);
     },
 
-    loadContract: async () => {
+    loadContract: async () => { //server issue fixed
         // create a JS version of the contracts
         const todoList = await $.getJSON('TodoList.json')
         App.contracts.TodoList = TruffleContract(todoList)
