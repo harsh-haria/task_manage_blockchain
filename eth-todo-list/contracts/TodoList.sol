@@ -18,7 +18,6 @@ contract TodoList{
 
     constructor() public{
         createTask("This is a first test case");
-        createTask("check this out.");
     }
 
     function createTask(string memory _content) public{
