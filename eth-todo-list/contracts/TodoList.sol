@@ -17,12 +17,13 @@ contract TodoList{
     mapping (uint=> Task) public tasks;
 
     constructor() public{
-        // createTask("harsh 1");
+        createTask("harsh 1");
         // createTask("harsh 2");
     }
 
     function createTask(string memory _content) public{
-        tasks[taskCount++] = Task(taskCount,_content,false);
+        taskCount++;
+        tasks[taskCount] = Task(taskCount,_content,false);
     }
 
 }
