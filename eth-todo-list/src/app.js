@@ -136,20 +136,20 @@ App = {
     },
 
 
-    // createTask: async () => {
-    //     App.setLoading(true);
-    //     const content = $('#newTask').val();
-    //     await App.todoList.createTask(content, { from: App.account[0] });
-    //     window.location.reload();
-    // },
+    createTask: async () => {
+        App.setLoading(true);
+        const content = $('#newTask').val();
+        await App.todoList.createTask(content, { from: App.account[0] });
+        window.location.reload();
+    },
 
 
-    // toggleCompleted: async (e) => {
-    //     App.setLoading(true)
-    //     const taskId = e.target.name
-    //     await App.todoList.toggleCompleted(taskId, { from: App.account[0] });
-    //     window.location.reload()
-    // },
+    toggleCompleted: async (e) => {
+        App.setLoading(true)
+        const taskId = e.target.name
+        await App.todoList.toggleCompleted(taskId, { from: App.account[0] });
+        window.location.reload()
+    },
 
 
       
