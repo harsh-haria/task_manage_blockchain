@@ -106,7 +106,7 @@ App = {
             $newTaskTemplate.find('input')
                             .prop('name', task_id)
                             .prop('checked', task_completed)
-                            // .on('click', App.toggleCompleted)
+                            .on('click', App.toggleCompleted)
     
     //         // Put the task in the correct list
             if (task_completed) {
