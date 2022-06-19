@@ -93,10 +93,10 @@ App = {
             const task_id = task[0].toNumber();
             const task_content = task[1];
             const task_completed = task[2];
-            // const task_assignee = task[3];
-            // const task_assigned_to = task[4];
+            const task_assignee = task[3];
+            const task_assigned_to = task[4];
             // const task_timestamp = task[5];
-            // const task_deadline = task[6];
+            const task_deadline = task[5];
             // const task_timeRemaining = task[7];
 
 
@@ -139,7 +139,12 @@ App = {
     createTask: async () => {
         App.setLoading(true);
         const content = $('#newTask').val();
-        await App.todoList.createTask(content, { from: App.account[0] });
+        const senderBox = $('#newAssigner').val();
+        const recv = $('#newAssignedTo').val();
+        const deadliner = $('#newDeadline').val();
+        // await App.todoList.createTask(content,{from:App.account[0]});
+        await App.todoList.createTask(content,senderBox,recv,deadliner,{from:App.account[0]});
+        // await App.todoList.createTask(content,sender,recv,deadline);
         window.location.reload();
     },
 
@@ -150,9 +155,6 @@ App = {
         await App.todoList.toggleCompleted(taskId, { from: App.account[0] });
         window.location.reload()
     },
-
-
-      
 }
 
 $(() => {

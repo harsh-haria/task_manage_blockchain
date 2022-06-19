@@ -1,7 +1,7 @@
 {
-    "name": "eth-todo-list",
+    "name": "eth-task",
     "version": "1.0.0",
-    "description": "Blockchain Todo List Powered By Ethereum",
+    "description": "Blockchain Task Management Application Powered By Ethereum",
     "main": "truffle-config.js",
     "directories": {
         "test": "test"
@@ -10,7 +10,7 @@
         "dev": "lite-server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "gregory@dappuniversity.com",
+    "author": "http://www.leetcode.com/harsh-haria",
     "license": "ISC",
     "devDependencies": {
         "bootstrap": "^4.6.1",
