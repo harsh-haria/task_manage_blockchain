@@ -102,10 +102,12 @@ App = {
 
     //         // Create the html for the task
             const $newTaskTemplate = $tackTemplate.clone()
-            $newTaskTemplate.find('.content').html(task_id+' => '+task_content+' => '+ task_assigner+ ' => '+task_assigned_to+' => '+task_deadline)
+            $newTaskTemplate.find('.content').html(task_id+' -> '+task_content+' -> '+ task_assigner+ ' -> '+task_assigned_to+' -> '+task_deadline)
+            // $newTaskTemplate.find('.content').html(<ul><li>task_id</li></ul>)
             $newTaskTemplate.find('input')
                             .prop('name', task_id)
                             .prop('checked', task_completed)
+                            .prop('assigner',task_assigner)
                             .on('click', App.toggleCompleted)
     
     //         // Put the task in the correct list
