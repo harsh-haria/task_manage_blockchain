@@ -1,2 +1,4 @@
 eth-todo-list/node_modules/
 eth-todo-list/tempapp.js
+/.vscode
+.gitignore
