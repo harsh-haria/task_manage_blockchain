@@ -96,6 +96,14 @@
           <div id="loader" class="text-center">
             <p class="text-center">Loading...</p>
           </div>
+          <!-- <div class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div> -->
+
+          <!-- <button id="loader" class="btn btn-primary" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button> -->
           <div id="content">
             <div class="main-form__input mx-auto ">
               <form class="form-floating mx-auto" onSubmit="App.createTask(); return false;">
@@ -112,10 +120,16 @@
             </div>
             <hr>
             <ul id="taskList" class="list-unstyled">
-              <div class="taskTemplate card opacity-50 perElement" class="checkbox" style="display: none">
+              <div class="taskTemplate opacity-50 perElement card" class="checkbox" style="display: none">
                 <label>
                   <input type="checkbox" />
-                  <span class="content gradient-border">Task content goes here...</span>
+                  <span class="idValue">
+                    Task ID goes here...
+                  </span>
+                  
+                  <span class="content">
+                    Task content goes here...
+                  </span>
                 </label>
               </div>
             </ul>

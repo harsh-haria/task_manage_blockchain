@@ -102,7 +102,29 @@ App = {
 
     //         // Create the html for the task
             const $newTaskTemplate = $tackTemplate.clone()
-            $newTaskTemplate.find('.content').html(task_id+' -> '+task_content+' -> '+ task_assigner+ ' -> '+task_assigned_to+' -> '+task_deadline)
+            $newTaskTemplate.find('.idValue').html("ID: "+task_id)
+            $newTaskTemplate
+                .find('.content')
+                .html(
+                    // '<h2>'+task_id+' -> '+task_content+' -> '+ task_assigner+ ' -> '+task_assigned_to+' -> '+task_deadline+'</h2>'
+                    "<ul>"+ 
+                        "<li>Task: " + task_content + "</li>" +
+                        "<li>Assignor: " + task_assigner + "</li>" +
+                        "<li>Assignee: " + task_assigned_to + "</li>" +
+                        "<li>Deadline: " + task_deadline + "</li>"
+                    + "</ul>"
+                    // '<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">' +
+                    //     task_id +
+                    // '</button>'+
+                    
+                    // '<div class="collapse" id="collapseExample">'+
+                    //     '<div class="card card-body">'+
+                    //         'Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.'+
+                    //     '</div>'+
+                    // '</div>'
+                  
+                    )
+            // $newTaskTemplate.find('.content').html(task_id+' -> '+task_content+' -> '+ task_assigner+ ' -> '+task_assigned_to+' -> '+task_deadline)
             // $newTaskTemplate.find('.content').html(<ul><li>task_id</li></ul>)
             $newTaskTemplate.find('input')
                             .prop('name', task_id)
