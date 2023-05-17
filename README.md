@@ -1,5 +1,8 @@
 ﻿# task_manage_blockchain
-Blockchain Application using Ethereum Smart Contracts and Solidity to manage tasks given to members of a team.
+### Welcome to our blockchain-based task management system! 
+#### With the power of Ethereum smart contracts and Solidity, our application simplifies task assignment and tracking for team members. 
+#### Enjoy transparent and immutable task management, ensuring efficiency and accountability within your team.
+
 
 <!-- steps to run the project:
 1) create a new folder named <project_folder_name>
